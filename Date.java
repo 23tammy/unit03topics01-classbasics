@@ -23,7 +23,7 @@ public class Date {
     }
 
     public String toString(){
-        String result = "";
+        String result = ""; //fix
         if (month < 10){
             result += "0" + month + "/";
         }else{
@@ -36,13 +36,17 @@ public class Date {
         }
         if (year < 1000){
             result += "0" + year;
+        }else if (year < 100){
+            result += "00" + year;
+        }else if (year < 10){
+            result += "000" + year;
         }else{
             result += year;
         }
         return result;
     }
     public static void main(String[] args) {
-        Date d1 = new Date(2, 1, 1198);
+        Date d1 = new Date(2, 1, 198);
         System.out.println(d1);
     }
 }
