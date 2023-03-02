@@ -34,11 +34,15 @@ public class Date {
         }else{
             result += day + "/";
         }
-        result += year;
+        if (year < 1000){
+            result += "0" + year;
+        }else{
+            result += year;
+        }
         return result;
     }
     public static void main(String[] args) {
-        Date d1 = new Date(10, 01, 1998);
-        System.out.println();
+        Date d1 = new Date(2, 1, 1198);
+        System.out.println(d1);
     }
 }
