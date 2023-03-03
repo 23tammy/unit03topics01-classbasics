@@ -3,7 +3,7 @@ public class TimeV2 {
     private int time; 
 
     public TimeV2 (int theHours, int theMinutes, int theSeconds){
-       
+        time = theSeconds;
     }
 
     public int getHours(){
@@ -11,34 +11,29 @@ public class TimeV2 {
     }
 
     public int getMinutes(){
-        return minutes;
+        return (time%3600)/60;
     }
 
     public int getSeconds(){
-        return seconds;
+        return ((time%3600)%60)%60;
     }
 
     public String toString(){
         String result = "";
-        hours += 12;
-        if (hours > 24){
-            hours %= 24;
-        }
-
-        if (hours < 10){
-            result += "0" + hours + ":";
+        if (getHours() < 10){
+            result += "0" + getHours() + ":";
         }else{
-            result += hours + ":";
+            result += getHours() + ":";
         }
-        if (minutes < 10){
-            result += "0" + minutes + ":";
+        if (getMinutes() < 10){
+            result += "0" + getMinutes() + ":";
         }else{
-            result += minutes + ":";
+            result += getMinutes() + ":";
         }
-        if (seconds < 10){
-            result += "0" + seconds;
+        if (getSeconds() < 10){
+            result += "0" + getSeconds();
         }else{
-            result += seconds;
+            result += getSeconds();
         }
         return result;
 
@@ -46,7 +41,11 @@ public class TimeV2 {
 
 
     public static void main(String[] args) {
-        TimeV2 t1 = new TimeV2(13,9,8);
+        TimeV2 t1 = new TimeV2(0,0,325325);
+        TimeV2 t2 = new TimeV2(0,0,21321);
+
         System.out.println(t1);
+        System.out.println(t2);
+
     }
 }
