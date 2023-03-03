@@ -3,7 +3,7 @@ public class TimeV2 {
     private int time; 
 
     public TimeV2 (int theHours, int theMinutes, int theSeconds){
-        time = theSeconds;
+        time = (theHours*3600) + (theMinutes*60) + theSeconds;
     }
 
     public int getHours(){
