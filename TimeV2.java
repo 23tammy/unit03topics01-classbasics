@@ -41,11 +41,12 @@ public class TimeV2 {
 
 
     public static void main(String[] args) {
-        TimeV2 t1 = new TimeV2(0,0,325325);
+        TimeV2 t1 = new TimeV2(2, 4, 5);
         TimeV2 t2 = new TimeV2(0,0,21321);
 
         System.out.println(t1);
         System.out.println(t2);
+        
 
     }
 }
